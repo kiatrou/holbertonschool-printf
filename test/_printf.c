@@ -39,6 +39,11 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');/*simply print '%'*/
 			}
+			if (format[i] != '%' && format[i] != 'c' && format[i] != 's')
+			{
+				_putchar('%');
+				_putchar(format[i]);
+			}
 		}
 		else
 		{
@@ -49,9 +54,4 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);/*clean up*/
 	return (len);/*return total len of every char printed*/
-}
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
