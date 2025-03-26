@@ -8,50 +8,56 @@
 */
 int _printf(const char *format, ...)
 {
-	int i, j, len = 0/*keep track of the num of characters printed*/;
 	va_list args;
-	va_start(args, format);
+	int count = 0;
+	char *str;
 	
-	/*loop through the format string*/
-	for (i = 0; format[i] != '\0'; i++)
+	if (format == NULL)
+	{	
+		return (-1);
+	}
+	va_start(args, format);
+	while (*format)
 	{
-		/*if the '%' is encountered*/
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			i++;/*then go to the next position after '%'*/
-			if (format[i] == 's')
+			format++;
+			if (!*format)
 			{
-				/*str arguement*/
-				char* str = va_arg(args, char*);
-				for (j = 0; str[j] != '\0'; j++)/*loop through the string*/
-				{
-					_putchar(str[j]);
-					len++;/*update len with the number of chars printed*/
-				}
+				return (-1);
 			}
-			if (format[i] == 'c')
+			if (*format == 'c')
 			{
-				/*char arguement*/
-				char c = (char) va_arg(args, int);
-				_putchar(c);
+				count += print_char(args);
 			}
-			if (format[i] == '%')
+			else if (*format == 's')
 			{
-				_putchar('%');/*simply print '%'*/
+				count+= print_str(args);
 			}
-			if (format[i] != '%' && format[i] != 'c' && format[i] != 's')
+			else if (*format == '%')
+			{
+				count+= _putchar('%');
+			}
+			else if (*format == 'i' || *format == 'd')
+			{
+				int num = va_arg(args, int);
+				print_number(num, &count)
+			}
+			else /*invalid specifier */
 			{
 				_putchar('%');
-				_putchar(format[i]);
+				count++;
+				_putchar(*format);
+				count++;
 			}
 		}
 		else
 		{
-			/*just print the regular string*/
-			_putchar(format[i]);
-			len++; /*keep track of the number of chars printed*/
+			_putchar(*format);
+			count++;
 		}
+		format++;
 	}
-	va_end(args);/*clean up*/
-	return (len);/*return total len of every char printed*/
+	va_end(args);
+	return (count);
 }
