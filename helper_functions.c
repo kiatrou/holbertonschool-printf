@@ -24,7 +24,7 @@ int print_str(va_list arg)
 
 	if (s == NULL)
 	{
-		s = ("NULL");
+		s = "(null)";
 	}
 	while(s[count])
 	{
