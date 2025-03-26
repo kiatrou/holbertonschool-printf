@@ -36,10 +36,10 @@ int _printf(const char *format, ...)
 				print_number(num, &count);
 			}
 			else /*invalid specifier */
-				_putchar('%');
-				count++;
-				_putchar(*format);
-				count++;
+			{
+				count += _putchar('%');
+				count += _putchar(*format);
+			}
 		}
 		else
 		{
