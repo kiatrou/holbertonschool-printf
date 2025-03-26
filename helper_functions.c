@@ -38,17 +38,23 @@ int print_str(va_list arg)
 */
 int print_number(int n, int *count)
 {
+	long num;
+
 	if (n < 0)
 	{
 		_putchar('-');
 		(*count)++;
-		n = -n;
+		num = (-(long)n);
+	}
+	else
+	{
+		num = n;
 	}
 	if (n / 10)
 	{
-		print_number(n / 10, count);
+		print_number(num / 10, count);
 	}
-	_putchar((n % 10) + '0');
+	_putchar((num % 10) + '0');
 	(*count)++;
-	return (0);
+	return (*count);
 }
