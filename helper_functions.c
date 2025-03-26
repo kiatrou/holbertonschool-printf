@@ -19,7 +19,7 @@ int print_char(va_list arg)
 	return (count);
 }
 /**
- * print_str: prints string
+ * print_str - prints string
  * @arg: elements being printed
  *
  * Return: printed string
