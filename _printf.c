@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
-	char *str;
 	
 	if (format == NULL)
 	{	
