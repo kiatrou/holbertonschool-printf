@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'i' || *format == 'd')
 			{
 				int num = va_arg(args, int);
-				print_number(num, &count)
+				print_number(num, &count);
 			}
 			else /*invalid specifier */
 			{
