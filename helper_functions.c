@@ -21,7 +21,11 @@ int print_str(va_list arg)
 {
 	char *s = va_arg(arg, char*);
 	int count = 0;
-	
+
+	if (s == NULL)
+	{
+		s = ("NULL");
+	}
 	while(s[count])
 	{
 		_putchar(s[count]);
