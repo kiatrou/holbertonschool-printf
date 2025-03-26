@@ -36,16 +36,16 @@ int _printf(const char *format, ...)
 				print_number(num, &count);
 			}
 			else /*invalid specifier */
-			{
 				_putchar('%');
 				count++;
 				_putchar(*format);
 				count++;
-			}
 		}
 		else
+		{
 			_putchar(*format);
 			count++;
+		}
 		format++;
 	}
 	va_end(args);
