@@ -32,7 +32,7 @@ int print_str(va_list arg)
 /**
  *
 */
-void print_number(int n, int *count)
+int print_number(int n, int *count)
 {
 	if (n < 0)
 	{
@@ -46,4 +46,5 @@ void print_number(int n, int *count)
 	}
 	_putchar((n % 10) + '0');
 	(*count)++;
+	return (0);
 }
