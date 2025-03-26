@@ -32,7 +32,7 @@ int print_str(va_list arg)
 /**
  *
 */
-int print_number(int n, int *count)
+void print_number(int n, int *count)
 {
 	if (n < 0)
 	{
