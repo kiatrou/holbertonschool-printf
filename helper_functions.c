@@ -3,19 +3,26 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
+ * print_char - prints char
+ * @arg: elements being printed
  *
+ * Return: printed char
 */
 int print_char(va_list arg)
 {
 	int count = 0;
 	int c;
+
 	c = va_arg(arg, int);
 	_putchar(c);
 	count++;
 	return (count);
 }
 /**
+ * print_str: prints string
+ * @arg: elements being printed
  *
+ * Return: printed string
 */
 int print_str(va_list arg)
 {
@@ -26,15 +33,19 @@ int print_str(va_list arg)
 	{
 		s = "(null)";
 	}
-	while(s[count])
+	while (s[count])
 	{
 		_putchar(s[count]);
 		count++;
 	}
-	return(count);
+	return (count);
 }
 /**
+ * print_number - prints integer
+ * @n: number being printed
+ * @count: pointer to count
  *
+ * Return: number
 */
 int print_number(int n, int *count)
 {
