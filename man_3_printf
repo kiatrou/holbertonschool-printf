@@ -1,18 +1,18 @@
-.Dd 27/3/25             \" DATE
-.Dt _printf   \" Program name
-.Sh _printf - Function that produces output according to format          \" Section Header - required - don't modify
-.Sh SYNOPSIS        \" Section Header - required - don't modify
+.Dd 27/3/25
+.Dt _printf   
+.Sh _printf - Function that produces output according to format
+.Sh SYNOPSIS       
 .Nm
 .B #include "main.h"
 .br
 .B int _printf(const char *format, ...);
-.Sh DESCRIPTION          \" Section Header - required - don't modify
+.Sh DESCRIPTION         
 _printf() function produces output according to the format.
 It uses a specific function according to received conversion specifier in order to display
 the result in the correct format.
 The available conversion specifiers are:
-.Bl -tag -width -indent  \" Differs from above in tag removed
-.It Fl   %c            \"-a flag as a list item
+.Bl -tag -width -indent  
+.It Fl   %c            
 Prints a single character.
 .It Fl %s
 Prints a string of characters.
@@ -20,12 +20,12 @@ Prints a string of characters.
 Prints integers.
 .It Fl %i
 Prints integers.
-.El                      \" Ends the list
+.El                     
 .Pp
 .SH RETURN
 -if successful, these functions return the number of characters printed (excluding the null byte).
 If the null return is unsuccessful,-1 is returned.
-.Sh EXAMPLE                \" File used or created by the topic of the man page
+.Sh EXAMPLE               
 .Ip
 _printf("This is a simple printf %s made in %d ", "Function", 2025);
 .IP
@@ -33,7 +33,7 @@ _printf("This is a simple printf %s made in %d ", "Function", 2025);
 .br
 .Sh SEE ALSO
 .Xr printf 3
-.\" .Sh BUGS              \" Document known, unremedied bugs
-.\" .Sh HISTORY           \" Document history if command behaves in a unique manner
+.\" .Sh BUGS             
+.\" .Sh HISTORY
 .Sh Authors
  Ealise Wang | Eli Malana | Kaj Kennedy | Kassandra Iatrou
