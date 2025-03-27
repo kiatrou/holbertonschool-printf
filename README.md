@@ -1,39 +1,46 @@
-.Dd 27/3/25
-.Dt _printf
-.Sh _printf - Function that produces output according to format
-.Sh SYNOPSIS
-.Nm
-.B #include "main.h"
-.br
-.B int _printf(const char *format, ...);
-.Sh DESCRIPTION
-_printf() function produces output according to the format.
-It uses a specific function according to received conversion specifier in order to display
-the result in the correct format.
-The available conversion specifiers are:
-.Bl -tag -width -indent
-.It Fl   %c
-Prints a single character.
-.It Fl %s
-Prints a string of characters.
-.It Fl %d
-Prints integers.
-.It Fl %i
-Prints integers.
-.El
-.Pp
-.SH RETURN
--if successful, these functions return the number of characters printed (excluding the null byte).
-If the null return is unsuccessful,-1 is returned.
-.Sh EXAMPLE
-.Ip
-_printf("This is a simple printf %s made in %d ", "Function", 2025);
-.IP
-    $ "This is a simple printf Function made in 2025"
-.br
-.Sh SEE ALSO
-.Xr printf 3
-.\" .Sh BUGS
-.\" .Sh HISTORY
-.Sh Authors
- Ealise Wang | Eli Malana | Kaj Kennedy | Kassandra Iatrou
+# _printf
+
+## Description
+`_printf` is a custom implementation of the standard `printf` function in C. It produces output according to a specified format and handles various conversion specifiers.
+
+## Synopsis
+```c
+#include "main.h"
+
+int _printf(const char *format, ...);
+```
+
+## Features
+- Supports the following conversion specifiers:
+  - `%c` : Prints a single character.
+  - `%s` : Prints a string of characters.
+  - `%d` : Prints an integer.
+  - `%i` : Prints an integer.
+
+## Return Value
+- On success, returns the number of characters printed (excluding the null byte `\0`).
+- On failure, returns `-1`.
+
+## Example Usage
+```c
+#include "main.h"
+
+int main(void)
+{
+    _printf("This is a simple printf %s made in %d\n", "Function", 2025);
+    return 0;
+}
+```
+### Expected Output:
+```
+This is a simple printf Function made in 2025
+```
+
+## See Also
+- `man 3 printf`
+
+## Authors
+- Ealise Wang  
+- Eli Malana  
+- Kaj Kennedy  
+- Kassandra Iatrou
